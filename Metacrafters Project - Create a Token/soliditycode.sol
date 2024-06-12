@@ -7,17 +7,17 @@ contract MyToken {
 
     string public tokname = "Cryptic";
     string public tokabbv  = "CRY";
-    uint public toksupply;
+    uint public totaltoksupply;
     mapping(address => uint) public balances;
     function minttok(address tokaddress,uint value) public {
-        toksupply += value;
+        totaltoksupply += value;
         balances[tokaddress] += value;
     }
     function tokburn(address tokaddress,uint value)public  {
         if (balances[tokaddress]>=value) {
             
         
-        toksupply -= value;
+        totaltoksupply -= value;
         balances[tokaddress] -= value;}
         
     }
